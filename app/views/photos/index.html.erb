@@ -17,7 +17,7 @@
     <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.user_id %></td>
-        <td><%= photo.image %></td>
+        <td><%= image_tag photo.avatar_url %></td>
         <td><%= photo.body %></td>
         <td><%= photo.vote %></td>
         <td><%= link_to 'Show', photo %></td>
