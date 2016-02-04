@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    
   end
 
   # GET /photos/new
@@ -72,3 +73,4 @@ class PhotosController < ApplicationController
       params.require(:photo).permit(:user_id, :avatar, :body, :vote)
     end
 end
+
