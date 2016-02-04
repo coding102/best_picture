@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  post 'sessions/create' => 'sessions#create', as: :user_login
-
-  delete 'sessions/destroy' => 'session#destroy', as: :log_out
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+    
+  get 'signup' => 'users#new'
 
   resources :users, :photos
   # The priority is based upon order of creation: first created -> highest priority.
