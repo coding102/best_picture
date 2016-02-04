@@ -1,16 +1,16 @@
 <div class="background">
     <div class="row">
         <h1>Login</h1>
-        <div class="col-md-6 col-md-offset-3">
+        <div class="column_s">
             <%= form_for(:session, url: login_path) do |f| %>
 
-            <%= f.label :username %>
+            <%= f.label :username %><br>
             <%= f.email_field :username, class: 'form-control' %>
 
-            <%= f.label :password %>
+            <br><%= f.label :password %><br>
             <%= f.password_field :password, class: 'form-control' %>
-
-            <%= f.submit "Log in", class: "btn btn-primary" %>
+                <br><br>
+            <%= f.submit "Log in", class: "btn btn-primary" %><br>
             <% end %>
 
             <p>New user? <%= link_to "Sign up now!", signup_path %></p>
