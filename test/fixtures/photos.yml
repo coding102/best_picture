@@ -5,9 +5,11 @@ one:
   image: MyString
   body: MyText
   vote: 1
+#  like: 1
 
 two:
   user_id: 1
   image: MyString
   body: MyText
   vote: 1
+#  like: 1

@@ -7,3 +7,15 @@ one:
 two:
   username: MyString
   password_digest: MyString
+
+#  name: MyString
+#  username: MyString
+#  total_likes: 1
+#  password_digest: <%= BCrypt::Password.create('secret') %>
+#
+#two:
+#  name: MyString
+#  username: MyString
+#  total_likes: 1
+#  password_digest: <%= BCrypt::Password.create('secret') %>
+#>>>>>>> frontEND

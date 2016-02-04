@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 
 def index
     @user = User.all
-    #checks to see if there is a user logged in
-    current_user
+#    #checks to see if there is a user logged in
+#    current_user
 end
 
 def new
