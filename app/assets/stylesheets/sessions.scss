@@ -1,3 +1,27 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, .background {
+    margin: 0px;
+    background: url(/assets/login.jpg) no-repeat 50% 50% fixed; 
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    
+    .row {
+        
+        h1 {
+        font-family: 'Comfortaa', cursive;
+        color: white;
+        }
+    }
+}
+
+
+
+.row {
+    width: 720px;
+    margin: 0 auto;
+}
