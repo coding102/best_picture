@@ -2,29 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body, .background {
-    margin: 0px;
-    background: url(/assets/login.jpg) no-repeat 50% 50% fixed; 
+.background img {
     background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    
-    .row {
-        border-radius: 15px;
-        background-color: white;
-        width: 300px;
-        height: 250px;
-        padding: 45px 0 20px 10%;
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        margin: -70px 0 0 -170px;
-        color: black;
-        font-family: 'Comfortaa', cursive;
-        
-        h1 {
-            padding-left: 15%;
-        }
-    }
 }

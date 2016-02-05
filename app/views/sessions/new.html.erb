@@ -1,5 +1,23 @@
-<div class="background">
-    <div class="row">
+<style type='text/css'>
+
+ html { 
+      background: url(/assets/login.jpeg) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    
+</style>
+
+
+<!--
+<div id="background">
+    <img src="/assets/login.jpeg">
+</div>
+-->
+
+    <div id="row">
         <h1>Login</h1>
         <div class="column_s">
             <%= form_for(:session, url: login_path) do |f| %>
@@ -16,4 +34,3 @@
             <p>New user? <%= link_to "Sign up now!", signup_path %></p>
         </div>
     </div>
-</div>
