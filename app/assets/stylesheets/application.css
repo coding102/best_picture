@@ -36,3 +36,27 @@ h1 {
     padding-left: 10%;
 }
 
+.footer {
+    background-color: cornflowerblue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li, a {
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2.5vh;
+    margin-top: 40px;
+}
+
+a:hover {
+    color: yellow;
+}
