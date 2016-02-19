@@ -3,22 +3,16 @@
     <div id="header">
         <%= image_tag("Camera.png", :size => "150x150") %>
     </div>  
-    
-
  
     <div id="list">
         <ul>
-            <li><%= link_to "Log in", login_path %></li>
-            <li>Explore</li>
-            <li>Explore</li>
+            <li><%= link_to "Log in", login_path, {style: "color: white; text-decoration: none; background: none; font-size: 3; "} %></li>
+
+            <li><%= link_to "Explore", show_path, {style: "color: white; text-decoration: none; background: none; font-size: 3vh;"} %></li>            <li>About</li>
         </ul>
     </div>
     
-        
-
 </div>
-
-
 
 <script>
     
@@ -35,4 +29,5 @@ function bounce($elem) {
 }
    
 </script>
+
 

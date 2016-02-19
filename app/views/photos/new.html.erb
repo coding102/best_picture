@@ -1,5 +1,16 @@
-<h1>New Photo</h1>
+<div id="uploadContainer">
 
-<%= render 'form' %>
+    <h1>Add Your Photos</h1>
 
-<%= link_to 'Back', photos_path %>
+    <%= render 'form' %>
+
+    <%= link_to 'Back', show_path %>
+
+</div>
+
+<div class="footer">
+    <ul>
+        <li><%= link_to "Logout", logout_path,  method: "delete" %></li>        
+    </ul>
+</div>
+
