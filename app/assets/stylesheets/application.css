@@ -38,7 +38,7 @@ h1 {
 
 .footer {
     background-color: cornflowerblue;
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     height: 100px;
