@@ -3,7 +3,6 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.integer :user_id
       t.string :image
-      t.text :body
       t.integer :vote
 
       t.timestamps null: false
