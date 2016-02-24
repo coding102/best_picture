@@ -1,21 +1,5 @@
-<div id="uploadContainer">
-
-    <h1>Add Your Photos</h1>
-
-    <%= render 'form' %>
-
-    <%= link_to 'Back', show_path %>
-
-</div>
-
-
-
-
-<%= form_for @user, :html => {:multipart => true} do |f| %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
+<%= form_for @photo, :html => {:multipart => true} do |f| %>
+ 
   <p>
     <%= f.file_field :avatar %>
   </p>
@@ -24,7 +8,8 @@
 
 <div class="footer">
     <ul>
-        <li><%= link_to "Logout", logout_path,  method: "delete" %></li>        
+        <li><%= link_to "Logout", logout_path,  method: "delete" %></li>       
+        <li><%= link_to 'Back', show_path %></li>
     </ul>
 </div>
 
