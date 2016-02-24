@@ -8,6 +8,20 @@
 
 </div>
 
+
+
+
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.file_field :avatar %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+
 <div class="footer">
     <ul>
         <li><%= link_to "Logout", logout_path,  method: "delete" %></li>        

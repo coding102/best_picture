@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'New Photo', new_photo_path %>
 <h1>Listing Photos</h1>
 
 <table>
@@ -13,19 +13,16 @@
   </thead>
 
   <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= photo.user_id %></td>
-        <td><%= image_tag photo.avatar_url %></td>
-        <td><%= photo.vote %></td>
-        <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <% @photos.each do |u| %>
+<%= image_tag u.avatar_url %>
+<% end %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Photo', new_photo_path %>
+
+
+
+

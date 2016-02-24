@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index
     @photos = current_user.photos
-    @photo =Photo.all
+    @photos =Photo.all
   end
 
   # GET /photos/1
@@ -27,7 +27,6 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.create(photo_params)
-
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
