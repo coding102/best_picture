@@ -11,7 +11,8 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @photo =Photo.find(params[:id])
+    @user = User.find_by(params[:user_id])
+    @photo = Photo.find(photo_params)
   end
 
   # GET /photos/new
@@ -33,6 +34,7 @@ class PhotosController < ApplicationController
           current_user.photos.push @photo
           format.html { redirect_to user_path(current_user), notice: 'Photo was successfully created.' }
         format.json { render :show, status: :created, location: @photo }
+
       else
         format.html { render :new }
         format.json { render json: @photo.errors, status: :unprocessable_entity }
