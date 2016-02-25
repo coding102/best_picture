@@ -1,28 +1,10 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'New Photo', new_photo_path %>
+    <%= link_to 'New Photo', new_photo_path %>
 <h1>Listing Photos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Image</th>
-      <th>Vote</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
     <% @photos.each do |u| %>
-<%= image_tag u.avatar_url %>
-<% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Photo', new_photo_path %>
-
-
-
-
+    <%= image_tag u.avatar_url, class:"col-xs-6 col-md-3" %>
+    <% end %>
+</div>
+  
