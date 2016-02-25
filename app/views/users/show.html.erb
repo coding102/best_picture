@@ -18,6 +18,20 @@
   <strong>Upload a photo today:</strong>
 <%= render 'photos/form'%>
 
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+
+ <div class="field">
+    <%= f.label :Add_Image %><br><br>
+    <%= f.file_field :avatar %>
+  </div>
+
+<div class="submit">
+	<%= f.submit %>	
+</div>
+  
+
+<% end %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to "Logout", logout_path, method: "delete" %>
