@@ -1,8 +1,22 @@
 <p>
   <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <%= @user.username %> <br/>
+      <strong>Name:</strong>
 
+    <%= @user.name %>  <br/>
+  <strong>Likes:</strong>
+
+    <%= @user.total_likes %>  <br/>
+  <strong>Password:</strong>
+
+    <%= @user.password_digest %>  <br/>
+
+</p>
+    <%= @user.photos.count %>  <br/>
+
+
+  <strong>Upload a photo today:</strong>
+<%= render 'photos/form'%>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

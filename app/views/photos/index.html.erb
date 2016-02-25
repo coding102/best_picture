@@ -3,8 +3,10 @@
 <h1>Listing Photos</h1>
 
 <div class="row">
-    <% @photos.each do |u| %>
-    <%= image_tag u.avatar_url, class:"col-xs-6 col-md-3" %>
+    <% @photos.each do |p| %>
+    <%= image_tag p.avatar_url, class:"col-xs-6 col-md-3" %>
+    <%=  p.user.username %>
+
     <% end %>
 </div>
   

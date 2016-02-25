@@ -1,10 +1,4 @@
-<%= form_for @photo, :html => {:multipart => true} do |f| %>
- 
-  <p>
-    <%= f.file_field :avatar %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<%= render 'form' %>
 
 <div class="footer">
     <ul>
