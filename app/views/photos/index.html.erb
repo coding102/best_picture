@@ -5,15 +5,19 @@
 
 <div class="row">
     <% @photos.each do |p| %>
-    <%= image_tag p.avatar_url, class:"col-xs-6 col-md-3" %>
-    <%=  p.user.username %>
-
+        <%= image_tag p.avatar_url, class:"col-xs-6 col-md-3" %>
+        <%=  p.user.username %>
+            <br />
+        <button type="button" onClick="clickME()">Like</button>
+            <br />
+        <a id="clicks">0</a>
     <% end %>
 </div>
-  
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Photo', new_user_photo_path %>
+<script>
+    var clicks = 0;
+    function clickME() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    }
+</script>

@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+    before_action :correct_user, only: :destroy
   # GET /photos
   # GET /photos.json
   def index
@@ -59,13 +59,13 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    @photo.destroy
-    respond_to do |format|
-      format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
-      format.json { head :no_content }
+      @photo.destroy
+    def correct_user
+        @photo = current_user.photos.find_by(id: params[:id])
+        redirect_to root_url if @photo.nil?
     end
   end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo

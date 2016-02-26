@@ -19,7 +19,7 @@
 <%= render 'photos/form'%>
 
 <% if !@user.photos.empty?%>
-<%= link_to 'bla',user_photo_path(@user.id, @user.photos.first.id) %>
+<%= link_to 'bla',photo_path(@user.id, @user.photos.first.id) %>
 <%end%>
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
