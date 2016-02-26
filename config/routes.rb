@@ -7,6 +7,7 @@ delete 'logout'  => 'sessions#destroy'
 get 'show' => 'photos#show'
 get 'signup' => 'users#new'
     
+    get  '/vote' => 'photos#vote', as: :vote
 resources :users, :photos, :sessions
     
   # The priority is based upon order of creation: first created -> highest priority.

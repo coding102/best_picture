@@ -1,6 +1,16 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
     before_action :correct_user, only: :destroy
+    
+    
+    
+    def vote
+        puts "VOTING WITH #{params}"
+        @photo = Photo.find(params[:id])
+        @photo.vote+=1
+        @photo.save
+#        redirect_to photos_path
+    end
   # GET /photos
   # GET /photos.json
   def index
@@ -28,7 +38,7 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
       @photo = Photo.new(photo_params)
-      
+      @photo.vote =0
     respond_to do |format|
       if @photo.save
           current_user.photos.push @photo
