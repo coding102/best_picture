@@ -15,10 +15,20 @@
 			<!-- link that deletes the photo  -->
 			<%= link_to "Destroy #{p.id}",  photo_path(p.id),  method: :delete, remote: :true %>
 
+			<%=  p.user.username %>
+            	<br />
+       		<button type="button" onClick="clickME()">Like</button>
+            	<br />
+        	<a id="clicks">0</a>
+
 		<% end %>
 	<% end %>
 </div>
 
-<br>
-
-
+<script>
+    var clicks = 0;
+    function clickME() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+    }
+</script>

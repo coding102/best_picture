@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+    before_action :correct_user, only: :destroy
   # GET /photos
   # GET /photos.json
   def index
@@ -69,7 +69,7 @@ class PhotosController < ApplicationController
       # redirect_to root_url if @photo.nil?
       # redirect_to photos_path
   end
-
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
