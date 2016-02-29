@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'show' => 'photos#show'
     
   get 'signup' => 'users#new'
+  delete 'photos' => 'photos#destroy'
 
   resources :users, :photos, :sessions
 

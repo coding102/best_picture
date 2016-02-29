@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
-    <%= link_to 'New Photo', new_photo_path %>
+
+<%= link_to 'New Photo', new_photo_path %>
 
 <h1>Listing Photos</h1>
 
 <div class="row">
-    <% @photos.each do |p| %>
-    <%= image_tag p.avatar_url, class:"col-xs-6 col-md-3" %>
-    <%=  p.user.username %>
+	<!-- going through all photos with a variable p -->
+	<% @photos.each do |p| %>
+		<!-- displays everything in a span. -->
+		<!-- gave it a class of col-xs-6 col-md-3 with an id of "image-#{p.id}" -->
+		<%= content_tag :span, class:"col-xs-6 col-md-3", id: "image-#{p.id}" do%>
+			<!-- printing out picture with a max-height of 200px -->
+			<%= image_tag p.avatar_url, style: "max-height: 200px;"%>
+			<!-- link that deletes the photo  -->
+			<%= link_to "Destroy #{p.id}",  photo_path(p.id),  method: :delete, remote: :true %>
 
-    <% end %>
+		<% end %>
+	<% end %>
 </div>
-  
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Photo', new_user_photo_path %>
+

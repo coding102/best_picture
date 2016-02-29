@@ -1,0 +1,4 @@
+// its getting id image-#{p.id} from index.html.erb
+console.log($("#image-" + "<%= @photo_id%>"));
+// getting the image and fading it 3 seconds after click
+$("#image-" + "<%= @photo_id%>").fadeOut(3000);
