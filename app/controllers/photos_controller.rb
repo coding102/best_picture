@@ -42,7 +42,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       if @photo.save
           current_user.photos.push @photo
-          format.html { redirect_to user_path(current_user), notice: 'Photo was successfully created.' }
+          format.html { redirect_to photos_path, notice: 'Photo was successfully created.' }
         format.json { render :show, status: :created, location: @photo }
 
       else
