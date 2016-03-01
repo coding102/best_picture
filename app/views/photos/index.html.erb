@@ -15,7 +15,6 @@
 			<!-- link that deletes the photo  -->
 			<%= link_to "Destroy #{p.id}",  photo_path(p.id),  method: :delete, remote: :true %>
 
-			<%=  p.user.username %>
             	<br />
        		<button type="button" onClick="clickME()">Like</button>
             	<br />
