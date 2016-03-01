@@ -12,7 +12,6 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = current_user.photos
     @photos =Photo.all
   end
 
