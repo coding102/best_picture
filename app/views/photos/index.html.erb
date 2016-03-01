@@ -1,26 +1,23 @@
+
 <p id="notice"><%= notice %></p>
 <%= render 'form' %>
 <h1>Listing Photos</h1>
-
+<br>
 <div class="row">
     <% @photos.each do |p| %>
     <!-- gave it a class of col-xs-6 col-md-3 with an id of "image-#{p.id}" -->
 		  <%= content_tag :span, class:"col-xs-6 col-md-3", id: "image-#{p.id}" do%>
     <!-- printing out picture with a max-height of 200px -->
-    <%= image_tag p.avatar_url , style: "max-width:300px;"%>
+    <%= image_tag p.avatar_url , style: "max-width:200px;"%>
+    <br />
     <!-- link that deletes the photo  -->
-			<%= link_to "Destroy #{p.id}",  photo_path(p.id),  method: :delete, remote: :true %>
-<br>
-    
-    <%=  p.id %>
-     <%= link_to "Like Photo", vote_path(id: p.id), remote: :true %>
+    <%= link_to "Delete",  photo_path(p.id),  method: :delete, remote: :true %>
+    &nbsp;&nbsp;&nbsp;
+     <%= link_to "Like", vote_path(id: p.id), remote: :true %>
     <%= content_tag :h5, p.vote, id: "photo-#{p.id}" %>
-
+    <%end%>
+    <% end %>
 </div>
-
-<% end %>
-    
-
 
 <script>
     var clicks = 0;

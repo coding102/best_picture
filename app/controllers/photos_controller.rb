@@ -1,5 +1,4 @@
 class PhotosController < ApplicationController
-<<<<<<< HEAD
     before_action :set_photo, only: [:show, :edit, :update, :destroy]
     before_action :current_user, only: :destroy
     
