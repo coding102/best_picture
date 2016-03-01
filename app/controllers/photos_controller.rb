@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+    before_action :set_photo, only: [:show, :edit, :update, :destroy]
     before_action :correct_user, only: :destroy
     
     
@@ -87,4 +87,3 @@ class PhotosController < ApplicationController
       params.require(:photo).permit(:user_id, :avatar, :body, :vote)
     end
 end
-

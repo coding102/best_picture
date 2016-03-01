@@ -9,7 +9,6 @@
     
         <%= image_tag p.avatar_url , style: "max-width:300px;"%>
       <br>
-        <%=  p.user.username %>
     
     <%=  p.id %>
         <%= link_to "Like Photo", vote_path(id: p.id), remote: :true %>
