@@ -20,13 +20,15 @@
     <% end %>
 </div>
 
-<% if current_user.photos.count <= 1 %>
+<% if current_user %>
+<% if !current_user.uploaded_today? %>
 <div id="row">
     <h1>Upload Your Daily Photo</h1>
     <div class="column_s">
         <%= render 'form' %>
     </div>
 </div>
+<%end%>
 <%end%>
 
 <%= link_to "Log out", logout_path, method: "delete" %>

@@ -3,36 +3,5 @@
     <div id="header">
         <%= image_tag("Camera.png", :size => "150x150") %>
     </div>  
-    <div id="list">
-        <ul>
-            <% if current_user %>
-                <li><%= link_to "Log out", logout_path, method: :delete, :style=>"color: white; font-family: 'Indie Flower', cursive; text-decoration: none; background: none; font-size: 4vh;"%></li>
-            <% else %>
-                <li><%= link_to "Log in", login_path, {style: "color: white; font-family: 'Indie Flower', cursive; text-decoration: none; background: none; font-size: 4vh; "} %></li>
-            <% end %>
-            
-            <li><%= link_to "Explore", show_path, {style: "color: white; font-family: 'Indie Flower', cursive; text-decoration: none; background: none; font-size: 4vh;"} %></li>                 
-            <li><%= link_to "About", show_path, {style: "color: white; font-family: 'Indie Flower', cursive; text-decoration: none; background: none; font-size: 4vh;"} %></li>
-            
-        </ul>
-    </div>
 </div>
-
-
-<script>
-    
-$('#header').hover( 
-    function() { $(this).data('bounce', true); bounce($(this));}, 
-    function() { $(this).data('bounce', false);
-});
-
-function bounce($elem) {
-    $elem.effect('bounce', { times: 1, distance: 15 }, 700, function() {
-        if ($(this).data('bounce')) bounce($elem);
-        else $elem.stop();
-    });   
-}
-   
-</script>
-
 
