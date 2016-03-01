@@ -1,28 +1,31 @@
 
 <p id="notice"><%= notice %></p>
-<%= render 'form' %>
 <h1>Listing Photos</h1>
 <br>
 <div class="row">
     <% @photos.each do |p| %>
     <!-- gave it a class of col-xs-6 col-md-3 with an id of "image-#{p.id}" -->
-		  <%= content_tag :span, class:"col-xs-6 col-md-3", id: "image-#{p.id}" do%>
+    <%= content_tag :span, class:"col-xs-6 col-md-3", id: "image-#{p.id}" do%>
     <!-- printing out picture with a max-height of 200px -->
     <%= image_tag p.avatar_url , style: "max-width:200px;"%>
     <br />
     <!-- link that deletes the photo  -->
+    <% if current_user == p.user%>
     <%= link_to "Delete",  photo_path(p.id),  method: :delete, remote: :true %>
+    <%end%>
     &nbsp;&nbsp;&nbsp;
-     <%= link_to "Like", vote_path(id: p.id), remote: :true %>
+    <%= link_to "Like", vote_path(id: p.id), remote: :true %>
     <%= content_tag :h5, p.vote, id: "photo-#{p.id}" %>
     <%end%>
     <% end %>
 </div>
 
-<script>
-    var clicks = 0;
-    function clickME() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-    }
-</script>
+<% if current_user.photos.count <= 1 %>
+<div id="row">
+    <h1>Upload Your Daily Photo</h1>
+    <div class="column_s">
+        <%= render 'form' %>
+
+    </div>
+</div>
+<%end%>
