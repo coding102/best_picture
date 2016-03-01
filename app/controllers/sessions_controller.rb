@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:session][:password])
             log_in user
 
-            redirect_to user_path(user.id)  
+            redirect_to photos_path(user.id)  
         else
             flash.now[:danger] = 'Invalid username/password combination'
             render 'new'
