@@ -1,8 +1,7 @@
 class PhotosController < ApplicationController
+<<<<<<< HEAD
     before_action :set_photo, only: [:show, :edit, :update, :destroy]
-    before_action :correct_user, only: :destroy
-    
-    
+    before_action :current_user, only: :destroy
     
     def vote
         puts "VOTING WITH #{params}"
@@ -11,6 +10,7 @@ class PhotosController < ApplicationController
         @photo.save
 #        redirect_to photos_path
     end
+
   # GET /photos
   # GET /photos.json
   def index
@@ -69,11 +69,15 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
+      # @photo is pulling Photo's information 
+      @photo = Photo.find(params[:id])
+      # @photo_id is keeping the photos id
+      @photo_id = @photo.id
+      # Is destroying the photo
       @photo.destroy
-    def correct_user
-        @photo = current_user.photos.find_by(id: params[:id])
-        redirect_to root_url if @photo.nil?
-    end
+      # @photo = current_user.photos.find_by(id: params[:id])
+      # redirect_to root_url if @photo.nil?
+      # redirect_to photos_path
   end
  
   private
