@@ -9,7 +9,6 @@ class PhotosController < ApplicationController
         @photo.save
 #        redirect_to photos_path
     end
-
   # GET /photos
   # GET /photos.json
   def index
