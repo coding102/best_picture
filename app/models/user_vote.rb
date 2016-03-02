@@ -1,6 +1,6 @@
 class UserVote < ActiveRecord::Base
-    belongs_to :voting_user, class_name: "User"
-    belongs_to :voted_photo, class_name: "Photo"
+    belongs_to :voting_user, class_name: "User", foreign_key: :user_id
+    belongs_to :voted_photo, class_name: "Photo", foreign_key: :photo_id
 end
 
 
