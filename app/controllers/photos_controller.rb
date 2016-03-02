@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
         puts "VOTING WITH #{params}"
         @photo = Photo.find(params[:id])
         @photo.vote+=1
+        @photo.voting_users.push current_user
         @photo.save
 #        redirect_to photos_path
     end
