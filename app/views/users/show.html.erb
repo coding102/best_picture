@@ -1,28 +1,37 @@
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %> <br/>
-      <strong>Name:</strong>
+<div class="row">
 
-    <%= @user.name %>  <br/>
-  <strong>Likes:</strong>
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="white">
+      <h1>Welcome
+        <%= @user.username %> 
+      </h1>
+      
+      <br/>
+      <%= "Name: #{@user.name}" if @user.name %>  <br/>
+      <strong>Likes:</strong>
+      <%= @user.total_likes %>  <br/>
+      <%= content_tag :h2, "You have uploaded #{@user.photos.count} photo(s)" %>  <br/>
 
-    <%= @user.total_likes %>  <br/>
-  <strong>Password:</strong>
+      <% if !current_user.uploaded_today? %>
+      <strong>Upload a photo today:</strong>
+      <%= render 'photos/form'%>
+      <%end%>
 
-    <%= @user.password_digest %>  <br/>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+      <%= link_to 'Back to Photos', photos_path %>
+    </div>
+  </div>
+</div>    
 
-</p>
-    <%= @user.photos.count %>  <br/>
+<div class="row">
 
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="white">
 
-  <strong>Upload a photo today:</strong>
-<%= render 'photos/form'%>
+      <% current_user.photos.each do |p|%>
+        <%= image_tag p.avatar_url, class: "explore-image" %>
+      <%end%>
 
-
-
-<% if !@user.photos.empty?%>
-<%= link_to 'bla',photo_path(@user.id, @user.photos.first.id) %>
-<%end%>
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Back', users_path %>
-<%= link_to "Logout", logout_path, method: "delete" %>
+    </div>
+  </div>
+</div>

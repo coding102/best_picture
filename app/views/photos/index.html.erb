@@ -7,7 +7,7 @@
     <!-- gave it a class of col-xs-6 col-md-3 with an id of "image-#{p.id}" -->
     <%= content_tag :span, class:"col-xs-6 col-md-3", id: "image-#{p.id}" do%>
     <!-- printing out picture with a max-height of 200px -->
-    <%= image_tag p.avatar_url , style: "max-width:200px;"%>
+    <%= image_tag p.avatar_url , class: "explore-image"%>
     <br />
     <!-- link that deletes the photo  -->
     <% if current_user == p.user%>

@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
        else
         false
     end
-    
+
 end
 
 end
